@@ -72,24 +72,9 @@ extension AuthorizeViewController: UIWebViewDelegate {
         // 2.封装参数
         let params = ["client_id":App_Key, "client_secret":App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
         // 3.发送POST请求
-        NetworkTool.shareNetworkTool().POST(path, parameters: params, success: { (_, JSON) -> Void in
-            // 1.字典转模型
-//            let account = UserAccount(dict: JSON as! [String : AnyObject])
-//             2.获取用户信息
-//            account.loadUserInfo { (account, error) -> () in
-//                if account != nil
-//                {
-//                    account!.saveAccount()
-                    // 去欢迎界面
-//                    NSNotificationCenter.defaultCenter().postNotificationName(XMGSwitchRootViewControllerKey, object: false)
-//                    return
-//                }
-            
-//                SVProgressHUD.showInfoWithStatus("网络不给力", maskType: SVProgressHUDMaskType.Black)
-//            }
-            print(JSON)
-            
-        }) { (_, error) -> Void in
+        NetworkTool.shareNetworkTool().POST(path, parameters: params, success: { (_, json) in
+            print(json)
+        }) { (_, error) in
             print(error)
         }
     }
