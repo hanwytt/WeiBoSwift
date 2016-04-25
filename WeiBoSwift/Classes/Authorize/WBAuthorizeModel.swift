@@ -17,8 +17,7 @@ class WBAuthorizeModel: NSObject, NSCoding {
             print(expires_date)
         }
     }
-    var remind_in: NSNumber?
-    var uid: NSNumber?
+    var uid: String?
     var expires_date: NSDate?
     
     static let authorizeModel:WBAuthorizeModel = {
@@ -51,7 +50,6 @@ class WBAuthorizeModel: NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder){
         aCoder.encodeObject(access_token, forKey: "access_token")
         aCoder.encodeObject(expires_in, forKey: "expires_in")
-        aCoder.encodeObject(remind_in, forKey: "remind_in")
         aCoder.encodeObject(uid, forKey: "uid")
         aCoder.encodeObject(expires_date, forKey: "expires_date")
     }
@@ -60,8 +58,7 @@ class WBAuthorizeModel: NSObject, NSCoding {
         super.init()
         access_token = aDecoder.decodeObjectForKey("access_token") as? String
         expires_in = aDecoder.decodeObjectForKey("expires_in") as? NSNumber
-        remind_in = aDecoder.decodeObjectForKey("remind_in") as? NSNumber
-        uid = aDecoder.decodeObjectForKey("uid") as? NSNumber
+        uid = aDecoder.decodeObjectForKey("uid") as? String
         expires_date = aDecoder.decodeObjectForKey("expires_date") as? NSDate
     }
     

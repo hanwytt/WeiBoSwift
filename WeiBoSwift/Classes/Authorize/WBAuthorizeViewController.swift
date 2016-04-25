@@ -67,11 +67,11 @@ extension WBAuthorizeViewController: UIWebViewDelegate {
     
     private func loadAccessToken(code: String)
     {
-        // 1.定义路径
+        // 路径
         let path = "oauth2/access_token"
-        // 2.封装参数
+        // 参数
         let params = ["client_id":App_Key, "client_secret":App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
-        // 3.发送POST请求
+        // 发送POST请求
         NetworkTool.shareNetworkTool().POST(path, parameters: params, success: { (_, json) in
             print(json)
             let model = WBAuthorizeModel(dict: json! as! [String : AnyObject])
