@@ -7,8 +7,10 @@
 //
 
 import UIKit
-//typealias success = ((NSURLSessionDataTask, AnyObject?) -> Void)?
-//typealias failure = ((NSURLSessionDataTask?, NSError) -> Void)?
+
+typealias success = ((NSURLSessionDataTask, AnyObject?) -> Void)
+typealias failure = ((NSURLSessionDataTask?, NSError) -> Void)
+
 class NetworkTool: AFHTTPSessionManager {
     static let tool:NetworkTool = {
         // 注意: baseURL一定要以/结尾
@@ -25,7 +27,11 @@ class NetworkTool: AFHTTPSessionManager {
         return tool
     }
     
-//    func GET(URLString: String, parameters: AnyObject?, successAction: success, failureAction: failure) -> NSURLSessionDataTask? {
-//        return GET(URLString, parameters: parameters, success: success, failure: failure)
-//    }
+    func Get(URLString: String, parameters: AnyObject?, successAction: success?, failureAction: failure?) -> NSURLSessionDataTask? {
+        return GET(URLString, parameters: parameters, success: successAction, failure: failureAction)
+    }
+    
+    func Post(URLString: String, parameters: AnyObject?, successAction: success?, failureAction: failure?) -> NSURLSessionDataTask? {
+        return POST(URLString, parameters: parameters, success: successAction, failure: failureAction)
+    }
 }
