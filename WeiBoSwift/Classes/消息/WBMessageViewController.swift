@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  WBMessageViewController.swift
 //  WeiBoSwift
 //
-//  Created by hanwy on 16/4/24.
+//  Created by 韩伟扬 on 16/4/25.
 //  Copyright © 2016年 hanwy. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class WBMessageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,12 +16,4 @@ class ViewController: UIViewController {
         view.backgroundColor = RandomRGB()
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-

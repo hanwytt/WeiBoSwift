@@ -1,5 +1,5 @@
 //
-//  HWYTabBarController.swift
+//  WBTabBarController.swift
 //  WeiBoSwift
 //
 //  Created by hanwy on 16/4/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HWYTabBarController: UITabBarController {
+class WBTabBarController: UITabBarController {
 
     override class func initialize() {
         let tabBar = UITabBar.appearance()
@@ -20,10 +20,10 @@ class HWYTabBarController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.addChildVC(ViewController.init(), title: "首页", image: "tabbar_home")
-        self.addChildVC(ViewController.init(), title: "消息", image: "tabbar_message_center")
-        self.addChildVC(ViewController.init(), title: "发现", image: "tabbar_discover")
-        self.addChildVC(ViewController.init(), title: "我", image: "tabbar_profile")
+        self.addChildVC(WBHomeViewController.init(), title: "首页", image: "tabbar_home")
+        self.addChildVC(WBMessageViewController.init(), title: "消息", image: "tabbar_message_center")
+        self.addChildVC(WBDiscoverViewController.init(), title: "发现", image: "tabbar_discover")
+        self.addChildVC(WBProfileViewController.init(), title: "我", image: "tabbar_profile")
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +36,7 @@ class HWYTabBarController: UITabBarController {
         vc.title = title;
         vc.tabBarItem.image = UIImage.init(named: image)
         vc.tabBarItem.selectedImage = UIImage.init(named: image + "_selected")
-        let nav = HWYNavigationController.init(rootViewController: vc)
+        let nav = WBNavigationController.init(rootViewController: vc)
         self.addChildViewController(nav)
     }
 

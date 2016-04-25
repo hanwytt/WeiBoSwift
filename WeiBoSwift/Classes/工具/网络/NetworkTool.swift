@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
+//typealias success = ((NSURLSessionDataTask, AnyObject?) -> Void)?
+//typealias failure = ((NSURLSessionDataTask?, NSError) -> Void)?
 class NetworkTool: AFHTTPSessionManager {
-    
     static let tool:NetworkTool = {
         // 注意: baseURL一定要以/结尾
         let url = NSURL(string: "https://api.weibo.com/")
@@ -20,8 +20,12 @@ class NetworkTool: AFHTTPSessionManager {
         return netTool
     }()
     
-    /// 获取单例的方法
+    // 获取单例的方法
     class func shareNetworkTool() -> NetworkTool {
         return tool
     }
+    
+//    func GET(URLString: String, parameters: AnyObject?, successAction: success, failureAction: failure) -> NSURLSessionDataTask? {
+//        return GET(URLString, parameters: parameters, success: success, failure: failure)
+//    }
 }

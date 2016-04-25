@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B907BB541CCC821000568EE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB531CCC821000568EE4 /* AppDelegate.swift */; };
-		B907BB561CCC821000568EE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB551CCC821000568EE4 /* ViewController.swift */; };
 		B907BB5B1CCC821000568EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B907BB5A1CCC821000568EE4 /* Assets.xcassets */; };
-		B907BB6D1CCC932200568EE4 /* HWYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB6C1CCC932200568EE4 /* HWYNavigationController.swift */; };
-		B907BB6F1CCC940B00568EE4 /* HWYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB6E1CCC940B00568EE4 /* HWYTabBarController.swift */; };
-		B907BB711CCC942000568EE4 /* HWYTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB701CCC942000568EE4 /* HWYTabBar.swift */; };
+		B907BB6D1CCC932200568EE4 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB6C1CCC932200568EE4 /* WBNavigationController.swift */; };
+		B907BB6F1CCC940B00568EE4 /* WBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB6E1CCC940B00568EE4 /* WBTabBarController.swift */; };
+		B907BB711CCC942000568EE4 /* WBTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB701CCC942000568EE4 /* WBTabBar.swift */; };
 		B907BB751CCCC78E00568EE4 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B907BB741CCCC78E00568EE4 /* Utility.swift */; };
+		B91FD5701CCDF7E100C23684 /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD56F1CCDF7E100C23684 /* WBProfileViewController.swift */; };
+		B91FD5721CCDF84200C23684 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD5711CCDF84200C23684 /* WBHomeViewController.swift */; };
+		B91FD5741CCDF86B00C23684 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD5731CCDF86B00C23684 /* WBDiscoverViewController.swift */; };
+		B91FD5771CCDF8A500C23684 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD5761CCDF8A500C23684 /* WBMessageViewController.swift */; };
+		B91FD57C1CCDF91300C23684 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD57B1CCDF91300C23684 /* String+Category.swift */; };
 		B9D2846D1CCCFD12000843B7 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2846C1CCCFD12000843B7 /* NetworkTool.swift */; };
-		B9E3DE851CCCD513005B2195 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3DE841CCCD513005B2195 /* AuthorizeViewController.swift */; };
+		B9F079FC1CCDFB43007B1405 /* WBAuthorizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */; };
+		B9F079FD1CCDFB43007B1405 /* WBAuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FB1CCDFB43007B1405 /* WBAuthorizeViewController.swift */; };
 		EA70A1149D56A3605DA920E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CE62DA426440AF81DEC180 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -24,16 +29,21 @@
 		91E35629F48EBB9D520B7FC4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B907BB501CCC821000568EE4 /* WeiBoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B907BB531CCC821000568EE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B907BB551CCC821000568EE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B907BB5A1CCC821000568EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B907BB5F1CCC821000568EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B907BB6C1CCC932200568EE4 /* HWYNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWYNavigationController.swift; sourceTree = "<group>"; };
-		B907BB6E1CCC940B00568EE4 /* HWYTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWYTabBarController.swift; sourceTree = "<group>"; };
-		B907BB701CCC942000568EE4 /* HWYTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWYTabBar.swift; sourceTree = "<group>"; };
+		B907BB6C1CCC932200568EE4 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
+		B907BB6E1CCC940B00568EE4 /* WBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTabBarController.swift; sourceTree = "<group>"; };
+		B907BB701CCC942000568EE4 /* WBTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTabBar.swift; sourceTree = "<group>"; };
 		B907BB741CCCC78E00568EE4 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		B91FD56F1CCDF7E100C23684 /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		B91FD5711CCDF84200C23684 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		B91FD5731CCDF86B00C23684 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		B91FD5761CCDF8A500C23684 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		B91FD57B1CCDF91300C23684 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		B9D2846C1CCCFD12000843B7 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
-		B9E3DE841CCCD513005B2195 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
 		B9E3DE871CCCD98C005B2195 /* WeiBoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeiBoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAuthorizeModel.swift; sourceTree = "<group>"; };
+		B9F079FB1CCDFB43007B1405 /* WBAuthorizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAuthorizeViewController.swift; sourceTree = "<group>"; };
 		F0CE62DA426440AF81DEC180 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,8 +99,6 @@
 			children = (
 				B907BB651CCC926600568EE4 /* Classes */,
 				B907BB531CCC821000568EE4 /* AppDelegate.swift */,
-				B907BB551CCC821000568EE4 /* ViewController.swift */,
-				B9E3DE841CCCD513005B2195 /* AuthorizeViewController.swift */,
 				B907BB5A1CCC821000568EE4 /* Assets.xcassets */,
 				B907BB5F1CCC821000568EE4 /* Info.plist */,
 			);
@@ -100,7 +108,8 @@
 		B907BB651CCC926600568EE4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B907BB661CCC926600568EE4 /* 分类 */,
+				B9F079F91CCDFB43007B1405 /* Authorize */,
+				B91FD5751CCDF89600C23684 /* 消息 */,
 				B907BB671CCC926600568EE4 /* 发现 */,
 				B907BB681CCC926600568EE4 /* 工具 */,
 				B907BB691CCC926600568EE4 /* 我 */,
@@ -110,16 +119,10 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		B907BB661CCC926600568EE4 /* 分类 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "分类";
-			sourceTree = "<group>";
-		};
 		B907BB671CCC926600568EE4 /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
+				B91FD5731CCDF86B00C23684 /* WBDiscoverViewController.swift */,
 			);
 			path = "发现";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 		B907BB691CCC926600568EE4 /* 我 */ = {
 			isa = PBXGroup;
 			children = (
+				B91FD56F1CCDF7E100C23684 /* WBProfileViewController.swift */,
 			);
 			path = "我";
 			sourceTree = "<group>";
@@ -145,6 +149,7 @@
 		B907BB6A1CCC926600568EE4 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				B91FD5711CCDF84200C23684 /* WBHomeViewController.swift */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -152,9 +157,9 @@
 		B907BB6B1CCC92E000568EE4 /* 基类 */ = {
 			isa = PBXGroup;
 			children = (
-				B907BB6C1CCC932200568EE4 /* HWYNavigationController.swift */,
-				B907BB6E1CCC940B00568EE4 /* HWYTabBarController.swift */,
-				B907BB701CCC942000568EE4 /* HWYTabBar.swift */,
+				B907BB6C1CCC932200568EE4 /* WBNavigationController.swift */,
+				B907BB6E1CCC940B00568EE4 /* WBTabBarController.swift */,
+				B907BB701CCC942000568EE4 /* WBTabBar.swift */,
 			);
 			path = "基类";
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 		B907BB721CCCC70C00568EE4 /* 扩展 */ = {
 			isa = PBXGroup;
 			children = (
+				B91FD57B1CCDF91300C23684 /* String+Category.swift */,
 			);
 			path = "扩展";
 			sourceTree = "<group>";
@@ -172,6 +178,23 @@
 				B9D2846C1CCCFD12000843B7 /* NetworkTool.swift */,
 			);
 			path = "网络";
+			sourceTree = "<group>";
+		};
+		B91FD5751CCDF89600C23684 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				B91FD5761CCDF8A500C23684 /* WBMessageViewController.swift */,
+			);
+			path = "消息";
+			sourceTree = "<group>";
+		};
+		B9F079F91CCDFB43007B1405 /* Authorize */ = {
+			isa = PBXGroup;
+			children = (
+				B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */,
+				B9F079FB1CCDFB43007B1405 /* WBAuthorizeViewController.swift */,
+			);
+			path = Authorize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +226,7 @@
 		B907BB481CCC821000568EE4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WB;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = hanwy;
@@ -294,14 +318,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B907BB711CCC942000568EE4 /* HWYTabBar.swift in Sources */,
-				B907BB6F1CCC940B00568EE4 /* HWYTabBarController.swift in Sources */,
+				B907BB711CCC942000568EE4 /* WBTabBar.swift in Sources */,
+				B91FD5771CCDF8A500C23684 /* WBMessageViewController.swift in Sources */,
+				B9F079FD1CCDFB43007B1405 /* WBAuthorizeViewController.swift in Sources */,
+				B907BB6F1CCC940B00568EE4 /* WBTabBarController.swift in Sources */,
+				B9F079FC1CCDFB43007B1405 /* WBAuthorizeModel.swift in Sources */,
+				B91FD5721CCDF84200C23684 /* WBHomeViewController.swift in Sources */,
+				B91FD57C1CCDF91300C23684 /* String+Category.swift in Sources */,
+				B91FD5701CCDF7E100C23684 /* WBProfileViewController.swift in Sources */,
 				B907BB751CCCC78E00568EE4 /* Utility.swift in Sources */,
-				B907BB561CCC821000568EE4 /* ViewController.swift in Sources */,
 				B9D2846D1CCCFD12000843B7 /* NetworkTool.swift in Sources */,
-				B9E3DE851CCCD513005B2195 /* AuthorizeViewController.swift in Sources */,
 				B907BB541CCC821000568EE4 /* AppDelegate.swift in Sources */,
-				B907BB6D1CCC932200568EE4 /* HWYNavigationController.swift in Sources */,
+				B91FD5741CCDF86B00C23684 /* WBDiscoverViewController.swift in Sources */,
+				B907BB6D1CCC932200568EE4 /* WBNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

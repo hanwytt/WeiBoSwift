@@ -13,20 +13,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
-        let isLogin = false
-        
-        if isLogin {
-            window?.rootViewController = HWYTabBarController.init()
+        if WBAuthorizeModel.isLogin() {
+            window?.rootViewController = WBTabBarController.init()
         } else {
-            window?.rootViewController = UINavigationController.init(rootViewController: AuthorizeViewController.init())
+            window?.rootViewController = UINavigationController.init(rootViewController: WBAuthorizeViewController.init())
         }
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    class func shareAppDelegate() -> AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+    
+    func loginSucceses() {
+        window?.rootViewController = WBTabBarController.init()
     }
 
     func applicationWillResignActive(application: UIApplication) {

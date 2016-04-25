@@ -1,5 +1,5 @@
 //
-//  AuthorizeViewController.swift
+//  WBAuthorizeViewController.swift
 //  WeiBoSwift
 //
 //  Created by hanwy on 16/4/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthorizeViewController: UIViewController {
+class WBAuthorizeViewController: UIViewController {
     let App_Key = "1034257092"
     let App_Secret = "810f1a0c0125ee4497f6b37171536d07"
     let redirect_uri = "https://www.baidu.com"
@@ -36,7 +36,7 @@ class AuthorizeViewController: UIViewController {
     }
 }
 
-extension AuthorizeViewController: UIWebViewDelegate {
+extension WBAuthorizeViewController: UIWebViewDelegate {
     func webViewDidStartLoad(webView: UIWebView) {
         
     }
@@ -74,6 +74,9 @@ extension AuthorizeViewController: UIWebViewDelegate {
         // 3.发送POST请求
         NetworkTool.shareNetworkTool().POST(path, parameters: params, success: { (_, json) in
             print(json)
+            let model = WBAuthorizeModel(dict: json! as! [String : AnyObject])
+            model.saveAuthorize()
+            AppDelegate.shareAppDelegate().loginSucceses()
         }) { (_, error) in
             print(error)
         }

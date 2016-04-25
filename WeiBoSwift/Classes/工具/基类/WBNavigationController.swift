@@ -1,5 +1,5 @@
 //
-//  HWYNavigationController.swift
+//  WBNavigationController.swift
 //  WeiBoSwift
 //
 //  Created by hanwy on 16/4/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HWYNavigationController: UINavigationController {
+class WBNavigationController: UINavigationController {
 
     override class func initialize() {
         let navBar = UINavigationBar.appearance()
