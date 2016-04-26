@@ -11,14 +11,14 @@ import UIKit
 typealias success = ((NSURLSessionDataTask, AnyObject?) -> Void)
 typealias failure = ((NSURLSessionDataTask?, NSError) -> Void)
 
-class NetworkTool: AFHTTPSessionManager {
+class NetworkTool {
     static let tool:NetworkTool = {
         // 注意: baseURL一定要以/结尾
-        let url = NSURL(string: "https://api.weibo.com/")
-        let netTool = NetworkTool(baseURL: url)
-        
-        // 设置AFN能够接收得数据类型
-        netTool.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/plain") as? Set<String>
+//        let url = NSURL(string: "https://api.weibo.com/")
+        let netTool = NetworkTool()
+//
+//        // 设置AFN能够接收得数据类型
+//        netTool.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript", "text/plain") as? Set<String>
         return netTool
     }()
     
@@ -27,11 +27,11 @@ class NetworkTool: AFHTTPSessionManager {
         return tool
     }
     
-    func Get(URLString: String, parameters: AnyObject?, successAction: success?, failureAction: failure?) -> NSURLSessionDataTask? {
-        return GET(URLString, parameters: parameters, success: successAction, failure: failureAction)
-    }
-    
-    func Post(URLString: String, parameters: AnyObject?, successAction: success?, failureAction: failure?) -> NSURLSessionDataTask? {
-        return POST(URLString, parameters: parameters, success: successAction, failure: failureAction)
-    }
+//    func Get(URLString: String, parameters: AnyObject?, successAction: success?, failureAction: failure?) -> NSURLSessionDataTask? {
+//        return GET(URLString, parameters: parameters, success: successAction, failure: failureAction)
+//    }
+//    
+//    func Post(URLString: String, parameters: AnyObject?, successAction: success?, failureAction: failure?) -> NSURLSessionDataTask? {
+//        return POST(URLString, parameters: parameters, success: successAction, failure: failureAction)
+//    }
 }

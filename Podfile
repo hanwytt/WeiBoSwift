@@ -1,9 +1,12 @@
-platform :ios, "7.0"
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, "8.0"
+use_frameworks!
 
-pod "AFNetworking"
+pod 'Alamofire', '~> 2.0.2'
+pod "SnapKit", '~> 0.15.0'
 pod "SDWebImage"
 pod "MBProgressHUD"
-pod 'Masonry'
 pod "MJRefresh"
 pod "MJExtension"
 pod "WeiboSDK"
+

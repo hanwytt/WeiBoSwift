@@ -18,14 +18,17 @@
 		B91FD5741CCDF86B00C23684 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD5731CCDF86B00C23684 /* WBDiscoverViewController.swift */; };
 		B91FD5771CCDF8A500C23684 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD5761CCDF8A500C23684 /* WBMessageViewController.swift */; };
 		B91FD57C1CCDF91300C23684 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD57B1CCDF91300C23684 /* String+Category.swift */; };
+		B9B55D751CCF70E200C2F186 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B55D731CCF70E200C2F186 /* Alamofire.framework */; };
+		B9B55D761CCF70E200C2F186 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B55D741CCF70E200C2F186 /* SnapKit.framework */; };
 		B9D2846D1CCCFD12000843B7 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D2846C1CCCFD12000843B7 /* NetworkTool.swift */; };
 		B9F079FC1CCDFB43007B1405 /* WBAuthorizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */; };
 		B9F079FD1CCDFB43007B1405 /* WBAuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FB1CCDFB43007B1405 /* WBAuthorizeViewController.swift */; };
 		B9F079FF1CCE08A3007B1405 /* WBProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FE1CCE08A3007B1405 /* WBProfileModel.swift */; };
-		EA70A1149D56A3605DA920E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CE62DA426440AF81DEC180 /* libPods.a */; };
+		C368CAFF1DD41B80992C47FF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E754ED58CBEF5FEF889A26 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76E754ED58CBEF5FEF889A26 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DD1AFC3B113CC76EF6436F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		91E35629F48EBB9D520B7FC4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B907BB501CCC821000568EE4 /* WeiBoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,12 +44,15 @@
 		B91FD5731CCDF86B00C23684 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		B91FD5761CCDF8A500C23684 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		B91FD57B1CCDF91300C23684 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
+		B9B55D6C1CCF6AE400C2F186 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		B9B55D6E1CCF6AEA00C2F186 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "Pods/../build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<group>"; };
+		B9B55D731CCF70E200C2F186 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		B9B55D741CCF70E200C2F186 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "Pods/../build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<group>"; };
 		B9D2846C1CCCFD12000843B7 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		B9E3DE871CCCD98C005B2195 /* WeiBoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeiBoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAuthorizeModel.swift; sourceTree = "<group>"; };
 		B9F079FB1CCDFB43007B1405 /* WBAuthorizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAuthorizeViewController.swift; sourceTree = "<group>"; };
 		B9F079FE1CCE08A3007B1405 /* WBProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileModel.swift; sourceTree = "<group>"; };
-		F0CE62DA426440AF81DEC180 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA70A1149D56A3605DA920E6 /* libPods.a in Frameworks */,
+				B9B55D751CCF70E200C2F186 /* Alamofire.framework in Frameworks */,
+				B9B55D761CCF70E200C2F186 /* SnapKit.framework in Frameworks */,
+				C368CAFF1DD41B80992C47FF /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +81,11 @@
 		44FF1CF4D8A24BD92373BE49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F0CE62DA426440AF81DEC180 /* libPods.a */,
+				B9B55D731CCF70E200C2F186 /* Alamofire.framework */,
+				B9B55D741CCF70E200C2F186 /* SnapKit.framework */,
+				B9B55D6E1CCF6AEA00C2F186 /* SnapKit.framework */,
+				B9B55D6C1CCF6AE400C2F186 /* Alamofire.framework */,
+				76E754ED58CBEF5FEF889A26 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -417,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -431,8 +443,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = WeiBoSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HWY.WeiBoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,8 +464,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = WeiBoSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HWY.WeiBoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";

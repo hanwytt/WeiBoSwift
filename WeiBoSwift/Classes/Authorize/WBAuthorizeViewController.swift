@@ -72,13 +72,13 @@ extension WBAuthorizeViewController: UIWebViewDelegate {
         // 参数
         let params = ["client_id":App_Key, "client_secret":App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
         // 发送POST请求
-        NetworkTool.shareNetworkTool().POST(path, parameters: params, success: { (_, json) in
-            print(json)
-            let model = WBAuthorizeModel(dict: json! as! [String : AnyObject])
-            model.saveAuthorize()
-            AppDelegate.shareAppDelegate().loginSucceses()
-        }) { (_, error) in
-            print(error)
-        }
+//        NetworkTool.shareNetworkTool().POST(path, parameters: params, success: { (_, json) in
+//            print(json)
+//            let model = WBAuthorizeModel(dict: json! as! [String : AnyObject])
+//            model.saveAuthorize()
+//            AppDelegate.shareAppDelegate().loginSucceses()
+//        }) { (_, error) in
+//            print(error)
+//        }
     }
 }

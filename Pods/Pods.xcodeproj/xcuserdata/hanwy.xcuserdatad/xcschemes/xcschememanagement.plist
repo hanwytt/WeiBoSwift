@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Masonry.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,40 +34,45 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>31C36CE9E04C3A4C62814712772466D9</key>
+		<key>4B2F30D90D85A544E9EFE2A49D392C25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<key>6847254D016329D4A531D34ED2B6DF81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+		<key>7C0126D717EB28DC6DB2EEA2E20B5172</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91DF0C6A976829503755909A476C3E9A</key>
+		<key>CC50550C54EEDDCA9F96842B5528EE16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>D1DA26B8AF14D32BF9853E4BF32D41CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
+		<key>F8801927DFFB8832F1C3C7C45106B1A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
