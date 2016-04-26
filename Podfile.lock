@@ -10,7 +10,7 @@ PODS:
   - WeiboSDK (3.1.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 2.0.2)
+  - Alamofire
   - MBProgressHUD
   - MJExtension
   - MJRefresh

@@ -19,6 +19,7 @@ class WBAuthorizeModel: NSObject, NSCoding {
     }
     var uid: String?
     var expires_date: NSDate?
+    var error: String?
     
     static let authorizeModel:WBAuthorizeModel = {
         if let model = WBAuthorizeModel.loadAuthorize() {
@@ -83,9 +84,5 @@ class WBAuthorizeModel: NSObject, NSCoding {
             return true
         }
         return false
-    }
-    
-    deinit {
-        print("deinit")
     }
 }

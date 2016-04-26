@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class WBAuthorizeViewController: UIViewController {
     let App_Key = "1034257092"
@@ -68,17 +69,22 @@ extension WBAuthorizeViewController: UIWebViewDelegate {
     private func loadAccessToken(code: String)
     {
         // 路径
-        let path = "oauth2/access_token"
+        let path = "https://api.weibo.com/oauth2/access_token"
         // 参数
-        let params = ["client_id":App_Key, "client_secret":App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
+        let parameters = ["client_id":App_Key, "client_secret":App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
         // 发送POST请求
-//        NetworkTool.shareNetworkTool().POST(path, parameters: params, success: { (_, json) in
-//            print(json)
-//            let model = WBAuthorizeModel(dict: json! as! [String : AnyObject])
-//            model.saveAuthorize()
-//            AppDelegate.shareAppDelegate().loginSucceses()
-//        }) { (_, error) in
-//            print(error)
-//        }
+        Alamofire.request(.POST, path, parameters: parameters)
+            .responseJSON { (_, _, result) in
+                if let json = result.value {
+                    print(json)
+                    let model = WBAuthorizeModel(dict: json as! [String : AnyObject])
+                    if model.error == nil {
+                        model.saveAuthorize()
+                        AppDelegate.shareAppDelegate().loginSucceses()
+                    }
+                } else {
+                    print(result.error)
+                }
+            }
     }
 }

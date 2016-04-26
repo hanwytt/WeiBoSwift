@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import SnapKit
 
 let KSCREENSIZE = UIScreen.mainScreen().bounds.size //屏幕尺寸

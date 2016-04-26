@@ -58,9 +58,10 @@ class WBProfileViewController: UIViewController {
         tableView.separatorInset = UIEdgeInsetsZero;
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: KSCREEN_WIDTH, height: 135))
-        headerView.backgroundColor = UIColor.redColor()
+        headerView.backgroundColor = UIColor.whiteColor()
         logo = UIImageView()
-        logo.backgroundColor = UIColor.whiteColor()
+        logo.layer.cornerRadius = 30
+        logo.layer.masksToBounds = true
         headerView.addSubview(logo)
         name = UILabel()
         headerView.addSubview(name)
@@ -70,6 +71,16 @@ class WBProfileViewController: UIViewController {
             make.left.equalTo(12)
             make.top.equalTo(12)
             make.width.height.equalTo(60)
+        }
+        name.snp_makeConstraints { (make) in
+            make.left.equalTo(logo.snp_right).offset(10)
+            make.centerY.equalTo(logo).offset(-10)
+            make.height.equalTo(21)
+        }
+        desc.snp_makeConstraints { (make) in
+            make.left.equalTo(name)
+            make.top.equalTo(name.snp_bottom)
+            make.height.equalTo(21)
         }
         tableView.tableHeaderView = headerView
         
@@ -85,17 +96,23 @@ class WBProfileViewController: UIViewController {
     
     func requestProfile() {
         // 路径
-        let path = "2/users/show.json"
+        let path = "https://api.weibo.com/2/users/show.json"
         // 参数
         let authorizeModel = WBAuthorizeModel.shareAuthorizeModel()
-        let params = ["access_token":authorizeModel.access_token!, "uid":authorizeModel.uid!]
-        // 发送POST请求
-//        NetworkTool.shareNetworkTool().GET(path, parameters: params, success: { (_, json) -> Void in
-//            print(json)
-//            let p = WBProfileModel(dict: json! as! [String : AnyObject])
-//        }) { (_, error) -> Void in
-//            print(error)
-//        }
+        let parameters = ["access_token":authorizeModel.access_token!, "uid":authorizeModel.uid!]
+        // 发送请求
+        Alamofire.request(.GET, path, parameters: parameters)
+            .responseJSON { (_, _, result) in
+                if let json = result.value {
+                    print(json)
+                    let model = WBProfileModel(dict: json as! [String : AnyObject])
+                    self.logo.sd_setImageWithURL(NSURL(string: model.profile_image_url!), placeholderImage: nil)
+                    self.name.text = model.screen_name
+                    self.desc.text = "我就是我"
+                } else {
+                    print(result.error)
+                }
+            }
     }
 }
 
