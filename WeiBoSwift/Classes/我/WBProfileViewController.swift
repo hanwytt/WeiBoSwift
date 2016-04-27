@@ -15,7 +15,7 @@ class WBProfileViewController: UIViewController {
     var logo: UIImageView!
     var name: UILabel!
     var desc: UILabel!
-    
+    let cellIdentifier = "cell"
     let dataArr = [
         [
             ["icon":"", "title":"新的好友"],
@@ -55,8 +55,19 @@ class WBProfileViewController: UIViewController {
         tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Grouped)
         tableView.backgroundColor = RGB(241, 242, 243)
         tableView.rowHeight = 48.0
-        tableView.separatorInset = UIEdgeInsetsZero;
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.tableHeaderView = headerView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(WBProfileTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        view.addSubview(tableView)
         
+        tableView.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(view)
+        }
+    }
+    
+    func headerView() -> UIView {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: KSCREEN_WIDTH, height: 135))
         headerView.backgroundColor = UIColor.whiteColor()
         logo = UIImageView()
@@ -67,13 +78,19 @@ class WBProfileViewController: UIViewController {
         headerView.addSubview(name)
         desc = UILabel()
         headerView.addSubview(desc)
+        let line1 = UIView()
+        line1.backgroundColor = RGB(235, 236, 237)
+        headerView.addSubview(line1)
+        let line2 = UIView()
+        line2.backgroundColor = RGB(235, 236, 237)
+        headerView.addSubview(line2)
         logo.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(12)
             make.top.equalTo(12)
             make.width.height.equalTo(60)
         }
         name.snp_makeConstraints { (make) in
-            make.left.equalTo(logo.snp_right).offset(10)
+            make.left.equalTo(logo.snp_right).offset(12)
             make.centerY.equalTo(logo).offset(-10)
             make.height.equalTo(21)
         }
@@ -82,25 +99,22 @@ class WBProfileViewController: UIViewController {
             make.top.equalTo(name.snp_bottom)
             make.height.equalTo(21)
         }
-        tableView.tableHeaderView = headerView
-        
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.addSubview(tableView)
-        
-        tableView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(view)
+        line1.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(headerView)
+            make.top.equalTo(logo.snp_bottom).offset(12)
+            make.height.equalTo(1)
         }
+        line2.snp_makeConstraints { (make) -> Void in
+            make.left.right.bottom.equalTo(headerView)
+            make.height.equalTo(1)
+        }
+        return headerView
     }
     
     func requestProfile() {
-        // 路径
         let path = "https://api.weibo.com/2/users/show.json"
-        // 参数
         let authorizeModel = WBAuthorizeModel.shareAuthorizeModel()
         let parameters = ["access_token":authorizeModel.access_token!, "uid":authorizeModel.uid!]
-        // 发送请求
         Alamofire.request(.GET, path, parameters: parameters)
             .responseJSON { (_, _, result) in
                 if let json = result.value {
@@ -118,7 +132,6 @@ class WBProfileViewController: UIViewController {
 
 extension WBProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return dataArr.count;
     }
@@ -129,15 +142,9 @@ extension WBProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
-        }
-        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        cell!.selectionStyle = UITableViewCellSelectionStyle.None
-        cell!.textLabel!.text = dataArr[indexPath.section][indexPath.row]["title"]
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! WBProfileTableViewCell
+        cell.title.text = dataArr[indexPath.section][indexPath.row]["title"]
+        return cell
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

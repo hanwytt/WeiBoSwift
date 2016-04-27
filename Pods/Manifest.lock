@@ -15,7 +15,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - SDWebImage
-  - SnapKit (~> 0.15.0)
+  - SnapKit
   - WeiboSDK
 
 SPEC CHECKSUMS:

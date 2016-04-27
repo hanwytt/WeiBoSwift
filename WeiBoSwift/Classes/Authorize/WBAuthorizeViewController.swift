@@ -68,11 +68,8 @@ extension WBAuthorizeViewController: UIWebViewDelegate {
     
     private func loadAccessToken(code: String)
     {
-        // 路径
         let path = "https://api.weibo.com/oauth2/access_token"
-        // 参数
         let parameters = ["client_id":App_Key, "client_secret":App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
-        // 发送POST请求
         Alamofire.request(.POST, path, parameters: parameters)
             .responseJSON { (_, _, result) in
                 if let json = result.value {

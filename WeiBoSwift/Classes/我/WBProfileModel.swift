@@ -18,9 +18,9 @@ class WBProfileModel: NSObject {
     /// 友好显示名称
     var name: String?
     /// 用户所在省级ID
-    var province: Int? = 0
+    var province: Int = 0
     /// 用户所在城市ID
-    var city: Int? = 0
+    var city: Int = 0
     /// 用户所在城市ID
     var location: String?
     /// 用户个人描述 description
@@ -38,13 +38,13 @@ class WBProfileModel: NSObject {
     /// 性别，m：男、f：女、n：未知
     var gender: String?
     /// 粉丝数
-    var followers_count: Int? = 0
+    var followers_count: Int = 0
     /// 关注数
-    var friends_count: Int? = 0
+    var friends_count: Int = 0
     /// 微博数
-    var statuses_count: Int? = 0
+    var statuses_count: Int = 0
     /// 收藏数
-    var favourites_count: Int? = 0
+    var favourites_count: Int = 0
     /// 用户创建（注册）时间
     var created_at: String?
     /// 是否允许所有人给我发私信，true：是，false：否
@@ -68,9 +68,9 @@ class WBProfileModel: NSObject {
     /// 该用户是否关注当前登录用户，true：是，false：否
     var follow_me: Bool?
     /// 用户的在线状态，0：不在线、1：在线
-    var online_status: Int? = 0
+    var online_status: Int = 0
     /// 用户的互粉数
-    var bi_followers_count: Int? = 0
+    var bi_followers_count: Int = 0
     /// 用户当前的语言版本，zh-cn：简体中文，zh-tw：繁体中文，en：英语
     var lang: String?
     
