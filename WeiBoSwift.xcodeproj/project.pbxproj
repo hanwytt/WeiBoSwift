@@ -18,6 +18,7 @@
 		B91FD5741CCDF86B00C23684 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD5731CCDF86B00C23684 /* WBDiscoverViewController.swift */; };
 		B91FD5771CCDF8A500C23684 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD5761CCDF8A500C23684 /* WBMessageViewController.swift */; };
 		B91FD57C1CCDF91300C23684 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91FD57B1CCDF91300C23684 /* String+Category.swift */; };
+		B9430F8D1CD11B11003DE704 /* WBErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9430F8C1CD11B11003DE704 /* WBErrorModel.swift */; };
 		B96748481CD05A5400561A23 /* WBProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96748471CD05A5400561A23 /* WBProfileTableViewCell.swift */; };
 		B967484A1CD09F9C00561A23 /* WBUnreadCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96748491CD09F9C00561A23 /* WBUnreadCountModel.swift */; };
 		B9F079FC1CCDFB43007B1405 /* WBAuthorizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */; };
@@ -43,6 +44,7 @@
 		B91FD5731CCDF86B00C23684 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		B91FD5761CCDF8A500C23684 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		B91FD57B1CCDF91300C23684 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
+		B9430F8C1CD11B11003DE704 /* WBErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBErrorModel.swift; sourceTree = "<group>"; };
 		B96748471CD05A5400561A23 /* WBProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B96748491CD09F9C00561A23 /* WBUnreadCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUnreadCountModel.swift; sourceTree = "<group>"; };
 		B9B55D6C1CCF6AE400C2F186 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				B907BB6C1CCC932200568EE4 /* WBNavigationController.swift */,
 				B907BB6E1CCC940B00568EE4 /* WBTabBarController.swift */,
 				B907BB701CCC942000568EE4 /* WBTabBar.swift */,
+				B9430F8C1CD11B11003DE704 /* WBErrorModel.swift */,
 			);
 			path = "基类";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B907BB711CCC942000568EE4 /* WBTabBar.swift in Sources */,
+				B9430F8D1CD11B11003DE704 /* WBErrorModel.swift in Sources */,
 				B91FD5771CCDF8A500C23684 /* WBMessageViewController.swift in Sources */,
 				B9F079FF1CCE08A3007B1405 /* WBProfileModel.swift in Sources */,
 				B9F079FD1CCDFB43007B1405 /* WBAuthorizeViewController.swift in Sources */,

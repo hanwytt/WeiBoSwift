@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBProfileModel: NSObject {
+class WBProfileModel: WBErrorModel {
     /// 用户UID
     var id: NSNumber? = 0
     /// 字符串型的用户UID
@@ -74,9 +74,9 @@ class WBProfileModel: NSObject {
     /// 用户当前的语言版本，zh-cn：简体中文，zh-tw：繁体中文，en：英语
     var lang: String?
     
-    init(dict: [String: AnyObject])
+    override init(dict: [String: AnyObject])
     {
-        super.init()
+        super.init(dict: dict)
         setValuesForKeysWithDictionary(dict)
     }
     

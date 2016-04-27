@@ -45,7 +45,7 @@ class WBProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = RGB(241, 242, 243)
+        view.backgroundColor = DefaultViewRGB
         createTableView()
         
         requestProfile()
@@ -53,7 +53,7 @@ class WBProfileViewController: UIViewController {
     
     func createTableView() {
         tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Grouped)
-        tableView.backgroundColor = RGB(241, 242, 243)
+        tableView.backgroundColor = DefaultViewRGB
         tableView.rowHeight = 48.0
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.tableHeaderView = headerView()
@@ -79,10 +79,10 @@ class WBProfileViewController: UIViewController {
         desc = UILabel()
         headerView.addSubview(desc)
         let line1 = UIView()
-        line1.backgroundColor = RGB(235, 236, 237)
+        line1.backgroundColor = DefaultLineRGB
         headerView.addSubview(line1)
         let line2 = UIView()
-        line2.backgroundColor = RGB(235, 236, 237)
+        line2.backgroundColor = DefaultLineRGB
         headerView.addSubview(line2)
         logo.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(12)
@@ -120,9 +120,11 @@ class WBProfileViewController: UIViewController {
                 if let json = result.value {
                     print(json)
                     let model = WBProfileModel(dict: json as! [String : AnyObject])
-                    self.logo.sd_setImageWithURL(NSURL(string: model.profile_image_url!), placeholderImage: nil)
-                    self.name.text = model.screen_name
-                    self.desc.text = "我就是我"
+                    if model.error == nil {
+                        self.logo.sd_setImageWithURL(NSURL(string: model.profile_image_url!), placeholderImage: nil)
+                        self.name.text = model.screen_name
+                        self.desc.text = "我就是我"
+                    }
                 } else {
                     print(result.error)
                 }

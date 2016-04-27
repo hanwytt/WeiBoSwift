@@ -21,7 +21,7 @@ class WBProfileTableViewCell: UITableViewCell {
     
     lazy var line: UIView! = {
         var line = UIView()
-        line.backgroundColor = RGB(235, 236, 237)
+        line.backgroundColor = DefaultLineRGB
         return line
     }()
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBAuthorizeModel: NSObject, NSCoding {
+class WBAuthorizeModel: WBErrorModel, NSCoding {
     var access_token: String?
     var expires_in: NSNumber? {
         didSet{
@@ -19,7 +19,6 @@ class WBAuthorizeModel: NSObject, NSCoding {
     }
     var uid: String?
     var expires_date: NSDate?
-    var error: String?
     
     static let authorizeModel:WBAuthorizeModel = {
         if let model = WBAuthorizeModel.loadAuthorize() {
@@ -35,12 +34,11 @@ class WBAuthorizeModel: NSObject, NSCoding {
     }
     
     override init() {
-        
+        super.init()
     }
     
-    init(dict: [String: AnyObject])
-    {
-        super.init()
+    override init(dict: [String: AnyObject]) {
+        super.init(dict: dict)
         setValuesForKeysWithDictionary(dict)
     }
     

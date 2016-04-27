@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBUnreadCountModel: NSObject {
+class WBUnreadCountModel: WBErrorModel {
     /// 新微博未读数
     var status: Int = 0
     /// 新粉丝数
@@ -36,9 +36,9 @@ class WBUnreadCountModel: NSObject {
     /// {{{3}}} 
     var msgbox: Int = 0
     
-    init(dict: [String: AnyObject])
+    override init(dict: [String: AnyObject])
     {
-        super.init()
+        super.init(dict: dict)
         setValuesForKeysWithDictionary(dict)
     }
     

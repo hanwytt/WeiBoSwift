@@ -12,7 +12,6 @@ class WBNavigationController: UINavigationController {
 
     override class func initialize() {
         let navBar = UINavigationBar.appearance()
-//        navBar.backgroundImage = UIImage.init(named: "tabbar_background")
         navBar.setBackgroundImage(UIImage.init(named: "navigationbar_background"), forBarMetrics: UIBarMetrics.CompactPrompt)
         
     }

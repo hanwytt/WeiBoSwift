@@ -20,3 +20,6 @@ func RGB(red: CGFloat, _ green: CGFloat, _ blue: CGFloat) -> UIColor {
 func RandomRGB() -> UIColor {
     return UIColor.init(red: CGFloat(arc4random_uniform(256))/255.0, green: CGFloat(arc4random_uniform(256))/255.0, blue: CGFloat(arc4random_uniform(256))/255.0, alpha: 1.0)
 }
+
+let DefaultViewRGB = RGB(241, 242, 243)
+let DefaultLineRGB = RGB(235, 236, 237)
