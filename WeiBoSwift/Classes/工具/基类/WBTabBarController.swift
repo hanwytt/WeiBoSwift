@@ -57,7 +57,9 @@ class WBTabBarController: UITabBarController {
                 if let json = result.value {
                     print(json)
                     let model = WBUnreadCountModel(dict: json as! [String: AnyObject])
-                   self.setBadgeValue(item: 0, value: model.status)
+                    if model.error == nil {
+                        self.setBadgeValue(item: 0, value: model.status)
+                    }
                 } else {
                     print(result.error)
                 }

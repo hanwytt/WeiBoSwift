@@ -15,6 +15,9 @@ class WBProfileViewController: UIViewController {
     var logo: UIImageView!
     var name: UILabel!
     var desc: UILabel!
+    var statuses_count : UILabel!
+    var friends_count: UILabel!
+    var followers_count: UILabel!
     let cellIdentifier = "cell"
     let dataArr = [
         [
@@ -84,6 +87,15 @@ class WBProfileViewController: UIViewController {
         let line2 = UIView()
         line2.backgroundColor = DefaultLineRGB
         headerView.addSubview(line2)
+        statuses_count = UILabel()
+        statuses_count.textAlignment = NSTextAlignment.Center
+        headerView.addSubview(statuses_count)
+        friends_count = UILabel()
+        friends_count.textAlignment = NSTextAlignment.Center
+        headerView.addSubview(friends_count)
+        followers_count = UILabel()
+        followers_count.textAlignment = NSTextAlignment.Center
+        headerView.addSubview(followers_count)
         logo.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(12)
             make.top.equalTo(12)
@@ -108,6 +120,24 @@ class WBProfileViewController: UIViewController {
             make.left.right.bottom.equalTo(headerView)
             make.height.equalTo(1)
         }
+        statuses_count.snp_makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.top.equalTo(line1.snp_bottom).offset(15)
+            make.height.equalTo(21)
+            make.width.equalTo(KSCREEN_WIDTH/3)
+        }
+        friends_count.snp_makeConstraints { (make) in
+            make.left.equalTo(statuses_count.snp_right)
+            make.top.equalTo(statuses_count)
+            make.height.equalTo(21)
+            make.width.equalTo(KSCREEN_WIDTH/3)
+        }
+        followers_count.snp_makeConstraints { (make) in
+            make.left.equalTo(friends_count.snp_right)
+            make.top.equalTo(statuses_count)
+            make.height.equalTo(21)
+            make.width.equalTo(KSCREEN_WIDTH/3)
+        }
         return headerView
     }
     
@@ -124,6 +154,9 @@ class WBProfileViewController: UIViewController {
                         self.logo.sd_setImageWithURL(NSURL(string: model.profile_image_url!), placeholderImage: nil)
                         self.name.text = model.screen_name
                         self.desc.text = "我就是我"
+                        self.statuses_count.text = "\(model.statuses_count)"
+                        self.friends_count.text = "\(model.friends_count)"
+                        self.followers_count.text = "\(model.followers_count)"
                     }
                 } else {
                     print(result.error)
