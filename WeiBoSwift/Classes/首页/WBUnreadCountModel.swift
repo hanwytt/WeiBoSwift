@@ -36,8 +36,7 @@ class WBUnreadCountModel: WBErrorModel {
     /// {{{3}}} 
     var msgbox: Int = 0
     
-    override init(dict: [String: AnyObject])
-    {
+    override init(dict: [String: AnyObject]) {
         super.init(dict: dict)
         setValuesForKeysWithDictionary(dict)
     }

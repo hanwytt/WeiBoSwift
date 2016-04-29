@@ -20,8 +20,7 @@ class WBErrorModel: NSObject {
         super.init()
     }
     
-    init(dict: [String: AnyObject])
-    {
+    init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeysWithDictionary(dict)
     }

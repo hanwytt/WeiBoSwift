@@ -26,6 +26,10 @@ class WBHomeViewController: UIViewController {
             .responseJSON { (_, _, result) in
                 if let json = result.value {
                     print(json)
+                    let model = WBHomeModel(dict: json as! [String : AnyObject])
+                    if model.error == nil {
+                        
+                    }
                 } else {
                     print(result.error)
                 }

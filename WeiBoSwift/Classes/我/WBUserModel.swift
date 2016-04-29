@@ -1,5 +1,5 @@
 //
-//  WBProfileModel.swift
+//  WBUserModel.swift
 //  WeiBoSwift
 //
 //  Created by 韩伟扬 on 16/4/25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBProfileModel: WBErrorModel {
+class WBUserModel: WBErrorModel {
     /// 用户UID
     var id: NSNumber? = 0
     /// 字符串型的用户UID
@@ -48,17 +48,17 @@ class WBProfileModel: WBErrorModel {
     /// 用户创建（注册）时间
     var created_at: String?
     /// 是否允许所有人给我发私信，true：是，false：否
-    var allow_all_act_msg: Bool?
+    var allow_all_act_msg: Bool? = false
     /// 是否允许标识用户的地理位置，true：是，false：否
-    var geo_enabled: Bool?
+    var geo_enabled: Bool? = false
     /// 是否是微博认证用户，即加V用户，true：是，false：否
-    var verified: Bool?
+    var verified: Bool? = false
     /// 用户备注信息，只有在查询用户关系时才返回此字段
     var remark: String?
     /// 用户的最近一条微博信息字段 详细
     var status: AnyObject?
     /// 是否允许所有人对我的微博进行评论，true：是，false：否
-    var allow_all_comment: Bool?
+    var allow_all_comment: Bool? = false
     /// 用户头像地址（大图），180×180像素
     var avatar_large: String?
     /// 用户头像地址（高清），高清头像原图
@@ -66,7 +66,7 @@ class WBProfileModel: WBErrorModel {
     /// 认证原因
     var verified_reason: String?
     /// 该用户是否关注当前登录用户，true：是，false：否
-    var follow_me: Bool?
+    var follow_me: Bool? = false
     /// 用户的在线状态，0：不在线、1：在线
     var online_status: Int = 0
     /// 用户的互粉数
@@ -74,10 +74,18 @@ class WBProfileModel: WBErrorModel {
     /// 用户当前的语言版本，zh-cn：简体中文，zh-tw：繁体中文，en：英语
     var lang: String?
     
-    override init(dict: [String: AnyObject])
-    {
+    override init(dict: [String: AnyObject]) {
         super.init(dict: dict)
         setValuesForKeysWithDictionary(dict)
+    }
+    
+    override func setValue(value: AnyObject?, forKey key: String) {
+        super.setValue(value, forKey: key)
+        if key == "description" {
+            desc = value as? String
+        } else if key == "status" {
+            status = WBStatusesModel(dict: value as! [String : AnyObject])
+        }
     }
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
