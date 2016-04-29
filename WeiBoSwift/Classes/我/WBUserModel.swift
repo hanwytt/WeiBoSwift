@@ -48,17 +48,17 @@ class WBUserModel: WBErrorModel {
     /// 用户创建（注册）时间
     var created_at: String?
     /// 是否允许所有人给我发私信，true：是，false：否
-    var allow_all_act_msg: Bool? = false
+    var allow_all_act_msg: Bool = false
     /// 是否允许标识用户的地理位置，true：是，false：否
-    var geo_enabled: Bool? = false
+    var geo_enabled: Bool = false
     /// 是否是微博认证用户，即加V用户，true：是，false：否
-    var verified: Bool? = false
+    var verified: Bool = false
     /// 用户备注信息，只有在查询用户关系时才返回此字段
     var remark: String?
     /// 用户的最近一条微博信息字段 详细
     var status: AnyObject?
     /// 是否允许所有人对我的微博进行评论，true：是，false：否
-    var allow_all_comment: Bool? = false
+    var allow_all_comment: Bool = false
     /// 用户头像地址（大图），180×180像素
     var avatar_large: String?
     /// 用户头像地址（高清），高清头像原图
@@ -66,7 +66,7 @@ class WBUserModel: WBErrorModel {
     /// 认证原因
     var verified_reason: String?
     /// 该用户是否关注当前登录用户，true：是，false：否
-    var follow_me: Bool? = false
+    var follow_me: Bool = false
     /// 用户的在线状态，0：不在线、1：在线
     var online_status: Int = 0
     /// 用户的互粉数

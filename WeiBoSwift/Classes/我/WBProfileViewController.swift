@@ -18,7 +18,7 @@ class WBProfileViewController: UIViewController {
     var statuses_count : UILabel!
     var friends_count: UILabel!
     var followers_count: UILabel!
-    let cellIdentifier = "cell"
+    let cellIdentifier = "UserCell"
     let dataArr = [
         [
             ["icon":"", "title":"新的好友"],
