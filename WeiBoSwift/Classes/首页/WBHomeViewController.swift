@@ -13,6 +13,8 @@ class WBHomeViewController: UIViewController {
 
     var tableView: UITableView!
     var statuses: [WBStatusesModel] = []
+    var offScreenCells:[String: WBHomeTableViewCell] = [:]
+    
     let cellIdentifier = "StatusesCell"
     
     override func viewDidLoad() {
@@ -85,10 +87,13 @@ extension WBHomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 //    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! WBHomeTableViewCell
+//        var cell = offScreenCells[cellIdentifier]
+//        if  cell == nil {
+//            cell = WBHomeTableViewCell()
+//            offScreenCells[cellIdentifier] = cell
+//        }
 //        let status = statuses[indexPath.section]
-//        
-//        let rowHeight = cell.rowHeight(status)
+//        let rowHeight = cell!.rowHeight(status)
 //        return rowHeight
 //    }
 }

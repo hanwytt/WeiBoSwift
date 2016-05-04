@@ -71,9 +71,10 @@ class WBHomeTableViewCell: UITableViewCell {
     
     func rowHeight(model: WBStatusesModel) -> CGFloat {
         self.model = model
+        setNeedsUpdateConstraints()
+        updateConstraintsIfNeeded()
+        setNeedsLayout()
         layoutIfNeeded()
-//        setNeedsUpdateConstraints()
-//        updateConstraintsIfNeeded()
-        return CGRectGetMaxY(line.frame)
+        return contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height + 1
     }
 }
