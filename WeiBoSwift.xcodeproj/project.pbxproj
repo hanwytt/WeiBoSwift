@@ -167,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				B91FD5711CCDF84200C23684 /* WBHomeViewController.swift */,
-				B96748491CD09F9C00561A23 /* WBUnreadCountModel.swift */,
 				B913A5E51CD348E70059A4A0 /* WBHomeTableViewCell.swift */,
+				B96748491CD09F9C00561A23 /* WBUnreadCountModel.swift */,
 				B913A5E91CD350190059A4A0 /* WBHomeModel.swift */,
 				B913A5E71CD349810059A4A0 /* WBStatusesModel.swift */,
 			);
