@@ -26,8 +26,8 @@ class WBHomeViewController: UIViewController {
     func createTableView() {
         tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Grouped)
         tableView.backgroundColor = DefaultViewRGB
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,12 +84,11 @@ extension WBHomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! WBHomeTableViewCell
-        let status = statuses[indexPath.section]
-        
-        let rowHeight = cell.rowHeight(status)
-//        rowCache[status.id] = rowHeight
-        return rowHeight
-    }
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! WBHomeTableViewCell
+//        let status = statuses[indexPath.section]
+//        
+//        let rowHeight = cell.rowHeight(status)
+//        return rowHeight
+//    }
 }

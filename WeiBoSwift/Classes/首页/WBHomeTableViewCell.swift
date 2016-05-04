@@ -24,7 +24,6 @@ class WBHomeTableViewCell: UITableViewCell {
         return logo
     }()
     
-    
     lazy var contentText: UILabel! = {
         var contentText = UILabel()
         contentText.numberOfLines = 0
@@ -65,7 +64,7 @@ class WBHomeTableViewCell: UITableViewCell {
         }
         line.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(contentText.snp_bottom).offset(10)
-            make.left.right.equalTo(0)
+            make.left.right.bottom.equalTo(0)
             make.height.equalTo(1)
         }
     }
@@ -73,6 +72,8 @@ class WBHomeTableViewCell: UITableViewCell {
     func rowHeight(model: WBStatusesModel) -> CGFloat {
         self.model = model
         layoutIfNeeded()
+//        setNeedsUpdateConstraints()
+//        updateConstraintsIfNeeded()
         return CGRectGetMaxY(line.frame)
     }
 }
