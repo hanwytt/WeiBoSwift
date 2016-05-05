@@ -55,7 +55,7 @@
 		B96748491CD09F9C00561A23 /* WBUnreadCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUnreadCountModel.swift; sourceTree = "<group>"; };
 		B9B55D6C1CCF6AE400C2F186 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		B9B55D741CCF70E200C2F186 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "Pods/../build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<group>"; };
-		B9E3DE871CCCD98C005B2195 /* WeiBoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeiBoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		B9BBD3551CDB77B200D23811 /* WeiBoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeiBoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAuthorizeModel.swift; sourceTree = "<group>"; };
 		B9F079FB1CCDFB43007B1405 /* WBAuthorizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBAuthorizeViewController.swift; sourceTree = "<group>"; };
 		B9F079FE1CCE08A3007B1405 /* WBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserModel.swift; sourceTree = "<group>"; };
@@ -115,6 +115,7 @@
 			children = (
 				B907BB651CCC926600568EE4 /* Classes */,
 				B907BB531CCC821000568EE4 /* AppDelegate.swift */,
+				B9BBD3551CDB77B200D23811 /* WeiBoSwift-Bridging-Header.h */,
 				B907BB5A1CCC821000568EE4 /* Assets.xcassets */,
 				B907BB5F1CCC821000568EE4 /* Info.plist */,
 			);
@@ -130,7 +131,6 @@
 				B907BB681CCC926600568EE4 /* 工具 */,
 				B907BB691CCC926600568EE4 /* 我 */,
 				B907BB6A1CCC926600568EE4 /* 首页 */,
-				B9E3DE871CCCD98C005B2195 /* WeiBoSwift-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -447,16 +447,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WeiBoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HWY.WeiBoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WeiBoSwift/Classes/WeiBoSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBoSwift/WeiBoSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -468,16 +465,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WeiBoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HWY.WeiBoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WeiBoSwift/Classes/WeiBoSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBoSwift/WeiBoSwift-Bridging-Header.h";
 			};
 			name = Release;
 		};

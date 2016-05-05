@@ -12,6 +12,9 @@ class WBHomeTableViewCell: UITableViewCell {
     
     var model: WBStatusesModel! {
         didSet {
+            if let url = model.user?.profile_image_url {
+                logo.sd_setImageWithURL(NSURL(string: url), placeholderImage: nil)
+            }
             contentText.text = model.text
         }
     }
