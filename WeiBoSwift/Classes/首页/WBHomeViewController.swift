@@ -13,8 +13,6 @@ class WBHomeViewController: UIViewController {
 
     var tableView: UITableView!
     var statuses: [WBStatusesModel] = []
-    var offScreenCells:[String: WBHomeTableViewCell] = [:]
-    
     let cellIdentifier = "StatusesCell"
     
     override func viewDidLoad() {
@@ -28,8 +26,12 @@ class WBHomeViewController: UIViewController {
     func createTableView() {
         tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Grouped)
         tableView.backgroundColor = DefaultViewRGB
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
+        //iOS7设置
+//        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.delegate = self
         tableView.dataSource = self
@@ -86,14 +88,11 @@ extension WBHomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 0.01
     }
     
+    //iOS7需要
 //    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        var cell = offScreenCells[cellIdentifier]
-//        if  cell == nil {
-//            cell = WBHomeTableViewCell()
-//            offScreenCells[cellIdentifier] = cell
-//        }
+//        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! WBHomeTableViewCell
 //        let status = statuses[indexPath.section]
-//        let rowHeight = cell!.rowHeight(status)
+//        let rowHeight = cell.rowHeight(status)
 //        return rowHeight
 //    }
 }

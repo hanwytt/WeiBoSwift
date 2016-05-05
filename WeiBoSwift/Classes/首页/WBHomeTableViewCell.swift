@@ -27,6 +27,8 @@ class WBHomeTableViewCell: UITableViewCell {
     lazy var contentText: UILabel! = {
         var contentText = UILabel()
         contentText.numberOfLines = 0
+        //iOS7返回高度需要设置
+//        contentText.preferredMaxLayoutWidth = KSCREEN_WIDTH - 12*2;
         return contentText
     }()
     
@@ -71,10 +73,6 @@ class WBHomeTableViewCell: UITableViewCell {
     
     func rowHeight(model: WBStatusesModel) -> CGFloat {
         self.model = model
-        setNeedsUpdateConstraints()
-        updateConstraintsIfNeeded()
-        setNeedsLayout()
-        layoutIfNeeded()
         return contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height + 1
     }
 }
