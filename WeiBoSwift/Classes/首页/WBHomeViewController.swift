@@ -152,10 +152,4 @@ extension WBHomeViewController: UITableViewDelegate, UITableViewDataSource {
 //        let rowHeight = cell.rowHeight(status)
 //        return rowHeight
 //    }
-    
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if statuses.count > 0 && indexPath.section >= statuses.count - 1 {
-//            requestStatuses(.Up)
-//        }
-//    }
 }

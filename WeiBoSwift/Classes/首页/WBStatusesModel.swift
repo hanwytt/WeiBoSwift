@@ -23,7 +23,19 @@ class WBStatusesModel: NSObject {
     var source_allowclick: Bool = false
     var source_type: Int = 0
     /// 微博来源
-    var source: String?
+    var source: String? {
+        didSet{
+            // 1.截取字符串
+            if let str = source {
+                if str.isEmpty {
+                    return
+                }
+                let start = str.rangeOfString(">")!.endIndex
+                let end = str.rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch)!.startIndex
+                source = "来自" + str.substringWithRange(Range.init(start: start, end: end))
+            }
+        }
+    }
     /// 是否已收藏，true：是，false：否
     var favorited: Bool = false
     /// 是否被截断，true：是，false：否

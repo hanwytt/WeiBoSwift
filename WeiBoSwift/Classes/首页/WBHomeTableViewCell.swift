@@ -16,8 +16,13 @@ class WBHomeTableViewCell: UITableViewCell {
                 logo.sd_setImageWithURL(NSURL(string: url), placeholderImage: nil)
             }
             title.text = model.user?.name
-            time.text = model.created_at!.stringWithFormatter("EEE MMM dd HH:mm:ss zzz yyyy")
+            time.text = NSDate.statusDateWithStr(model.created_at!)
             source.text = model.source
+//            do {
+//                try source.attributedText = NSAttributedString(data: (model.source?.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true))!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+//            } catch  {
+//                print(model.source)
+//            }
             contentText.text = model.text
         }
     }
