@@ -8,19 +8,30 @@
 
 import UIKit
 import Alamofire
+import MJRefresh
+
+/// 下拉、上拉
+enum PullUpDown {
+    case Up
+    case Down
+}
 
 class WBHomeViewController: UIViewController {
 
+    var unreadCount:SetUnreadCount?
     var tableView: UITableView!
+    var max_id: NSNumber? = 0
+    var since_id: NSNumber? = 0
     var statuses: [WBStatusesModel] = []
     let cellIdentifier = "StatusesCell"
+    var isRequesting: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = DefaultViewRGB
         createTableView()
-        requestStatuses()
+        tableView.mj_header.beginRefreshing()
     }
     
     func createTableView() {
@@ -41,24 +52,69 @@ class WBHomeViewController: UIViewController {
         tableView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(view)
         }
+        
+        tableView.mj_header =  MJRefreshNormalHeader(refreshingBlock: { [unowned self] () -> Void in
+            if self.isRequesting {
+                self.tableView.mj_header.endRefreshing()
+            } else {
+                self.requestStatuses(.Down)
+            }
+        })
+        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [unowned self] () -> Void in
+            if self.isRequesting {
+                self.tableView.mj_footer.endRefreshing()
+            } else {
+                self.requestStatuses(.Up)
+            }
+        })
     }
     
-    func requestStatuses() {
-        let path = "https://api.weibo.com/2/statuses/public_timeline.json"
+    func requestStatuses(pull: PullUpDown) {
+        isRequesting = true
+        let path = "https://api.weibo.com/2/statuses/home_timeline.json"
         let authorizeModel = WBAuthorizeModel.shareAuthorizeModel()
-        let parameters = ["access_token":authorizeModel.access_token!, "count":"50", "page":"1", "base_app":"0"]
+        var parameters: [String: AnyObject] = [:]
+        parameters["access_token"] = authorizeModel.access_token!
+        switch pull {
+        case .Down:
+            if since_id != nil {
+                parameters["since_id"] = since_id
+            }
+        case .Up:
+            if max_id != nil {
+                parameters["max_id"] = max_id
+            }
+        }
+        parameters["count"] = 20
+        parameters["page"] = 1
+        parameters["base_app"] = 0
         Alamofire.request(.GET, path, parameters: parameters)
             .responseJSON { (_, _, result) in
                 if let json = result.value {
                     print(json)
                     let model = WBHomeModel(dict: json as! [String : AnyObject])
                     if model.error == nil {
-                        self.statuses = model.statuses
+                        self.max_id = model.max_id
+                        self.since_id = model.since_id
+                        switch pull {
+                        case .Down:
+                            self.statuses.insertContentsOf(model.statuses, at: self.statuses.startIndex)
+                        case .Up:
+                            self.statuses.appendContentsOf(model.statuses)
+                        }
+                        self.unreadCount?(0, model.has_unread)
                         self.tableView.reloadData()
                     }
                 } else {
                     print(result.error)
                 }
+            switch pull {
+            case .Down:
+                self.tableView.mj_header.endRefreshing()
+            case .Up:
+                self.tableView.mj_footer.endRefreshing()
+            }
+            self.isRequesting = false
         }
     }
 }
@@ -66,6 +122,7 @@ class WBHomeViewController: UIViewController {
 extension WBHomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        tableView.mj_footer?.hidden = statuses.count == 0
         return statuses.count;
     }
     
@@ -94,5 +151,11 @@ extension WBHomeViewController: UITableViewDelegate, UITableViewDataSource {
 //        let status = statuses[indexPath.section]
 //        let rowHeight = cell.rowHeight(status)
 //        return rowHeight
+//    }
+    
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if statuses.count > 0 && indexPath.section >= statuses.count - 1 {
+//            requestStatuses(.Up)
+//        }
 //    }
 }

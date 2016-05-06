@@ -152,7 +152,7 @@ class WBProfileViewController: UIViewController {
                     let model = WBUserModel(dict: json as! [String : AnyObject])
                     if model.error == nil {
                         self.logo.sd_setImageWithURL(NSURL(string: model.profile_image_url!), placeholderImage: nil)
-                        self.name.text = model.screen_name
+                        self.name.text = model.name
                         self.desc.text = model.desc
                         self.statuses_count.text = "\(model.statuses_count)"
                         self.friends_count.text = "\(model.friends_count)"

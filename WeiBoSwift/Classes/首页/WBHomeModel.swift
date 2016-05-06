@@ -9,13 +9,18 @@
 import UIKit
 
 class WBHomeModel: WBErrorModel {
-    var hasvisible: Bool = false
-    var interval: Int = 0
-    var next_cursor: Int = 0
-    var previous_cursor: Int = 0
     var statuses: [WBStatusesModel] = []
-    /// 总数
+    var advertises: [AnyObject] = []
+    var ad: [AnyObject] = []
+    var hasvisible: Bool = false
+    var previous_cursor: Int = 0
+    var next_cursor: Int = 0
     var total_number: Int = 0
+    var interval: Int = 0
+    var uve_blank: Int = 0
+    var since_id: NSNumber = 0
+    var max_id: NSNumber = 0
+    var has_unread: Int = 0
     
     override init(dict: [String: AnyObject]) {
         super.init(dict: dict)

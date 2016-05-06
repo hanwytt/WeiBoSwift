@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+typealias SetUnreadCount = (Int, Int) -> Void
+
 class WBTabBarController: UITabBarController {
     
     var currentIndex = 0
@@ -30,6 +32,9 @@ class WBTabBarController: UITabBarController {
 
         // Do any additional setup after loading the view.
         homeVC = WBHomeViewController()
+        homeVC.unreadCount = { [unowned self] (item: Int, value: Int) -> Void in
+            self.setBadgeValue(item: item, value: value)
+        }
         self.addChildVC(homeVC, title: "首页", image: "tabbar_home")
         self.addChildVC(WBMessageViewController(), title: "消息", image: "tabbar_message_center")
         self.addChildVC(WBDiscoverViewController(), title: "发现", image: "tabbar_discover")
@@ -66,23 +71,23 @@ class WBTabBarController: UITabBarController {
         }
     }
     
-    func requestSetCount() {
-        let path = "https://rm.api.weibo.com/2/remind/set_count.json"
-        let authorizeModel = WBAuthorizeModel.shareAuthorizeModel()
-        let parameters = ["access_token":authorizeModel.access_token!, "type":"mention_status"]
-        Alamofire.request(.POST, path, parameters: parameters)
-            .responseJSON { (_, _, result) in
-                if let json = result.value {
-                    print(json)
-                    let model = WBErrorModel(dict: json as! [String: AnyObject])
-                    if model.error == nil {
-                        self.setBadgeValue(item: 0, value: 0)
-                    }
-                } else {
-                    print(result.error)
-                }
-        }
-    }
+//    func requestSetCount() {
+//        let path = "https://rm.api.weibo.com/2/remind/set_count.json"
+//        let authorizeModel = WBAuthorizeModel.shareAuthorizeModel()
+//        let parameters = ["access_token":authorizeModel.access_token!, "type":"mention_status"]
+//        Alamofire.request(.POST, path, parameters: parameters)
+//            .responseJSON { (_, _, result) in
+//                if let json = result.value {
+//                    print(json)
+//                    let model = WBErrorModel(dict: json as! [String: AnyObject])
+//                    if model.error == nil {
+//                        self.setBadgeValue(item: 0, value: 0)
+//                    }
+//                } else {
+//                    print(result.error)
+//                }
+//        }
+//    }
     
     func setBadgeValue(item item: Int, value: Int) {
         let bar = self.tabBar.items![item]
@@ -101,8 +106,7 @@ extension WBTabBarController: UITabBarControllerDelegate {
         if let index = viewControllers?.indexOf(viewController) {
             if currentIndex == index {
                 if currentIndex == 0 {
-                    homeVC.requestStatuses()
-                    requestSetCount()
+                    homeVC.tableView.mj_header.beginRefreshing()
                 }
             } else {
                 currentIndex = index
