@@ -81,21 +81,23 @@ class WBProfileViewController: UIViewController {
         headerView.addSubview(name)
         desc = UILabel()
         headerView.addSubview(desc)
+        let bottomView = UIView()
+        headerView.addSubview(bottomView)
         let line1 = UIView()
         line1.backgroundColor = DefaultLineRGB
-        headerView.addSubview(line1)
+        bottomView.addSubview(line1)
         let line2 = UIView()
         line2.backgroundColor = DefaultLineRGB
-        headerView.addSubview(line2)
+        bottomView.addSubview(line2)
         statuses_count = UILabel()
         statuses_count.textAlignment = NSTextAlignment.Center
-        headerView.addSubview(statuses_count)
+        bottomView.addSubview(statuses_count)
         friends_count = UILabel()
         friends_count.textAlignment = NSTextAlignment.Center
-        headerView.addSubview(friends_count)
+        bottomView.addSubview(friends_count)
         followers_count = UILabel()
         followers_count.textAlignment = NSTextAlignment.Center
-        headerView.addSubview(followers_count)
+        bottomView.addSubview(followers_count)
         logo.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(12)
             make.top.equalTo(12)
@@ -111,32 +113,32 @@ class WBProfileViewController: UIViewController {
             make.top.equalTo(name.snp_bottom)
             make.height.equalTo(21)
         }
-        line1.snp_makeConstraints { (make) -> Void in
-            make.left.right.equalTo(headerView)
+        bottomView.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(logo.snp_bottom).offset(12)
+            make.left.right.bottom.equalTo(headerView)
+        }
+        line1.snp_makeConstraints { (make) -> Void in
+            make.left.right.top.equalTo(0)
             make.height.equalTo(1)
         }
         line2.snp_makeConstraints { (make) -> Void in
-            make.left.right.bottom.equalTo(headerView)
+            make.left.right.bottom.equalTo(0)
             make.height.equalTo(1)
         }
         statuses_count.snp_makeConstraints { (make) in
             make.left.equalTo(0)
-            make.top.equalTo(line1.snp_bottom).offset(15)
-            make.height.equalTo(21)
-            make.width.equalTo(KSCREEN_WIDTH/3)
+            make.centerY.equalTo(0)
         }
         friends_count.snp_makeConstraints { (make) in
             make.left.equalTo(statuses_count.snp_right)
-            make.top.equalTo(statuses_count)
-            make.height.equalTo(21)
-            make.width.equalTo(KSCREEN_WIDTH/3)
+            make.centerY.equalTo(0)
+            make.width.equalTo(statuses_count)
         }
         followers_count.snp_makeConstraints { (make) in
             make.left.equalTo(friends_count.snp_right)
-            make.top.equalTo(statuses_count)
-            make.height.equalTo(21)
-            make.width.equalTo(KSCREEN_WIDTH/3)
+            make.right.equalTo(0)
+            make.centerY.equalTo(0)
+            make.width.equalTo(friends_count)
         }
         return headerView
     }
@@ -151,7 +153,7 @@ class WBProfileViewController: UIViewController {
                     print(json)
                     let model = WBUserModel(dict: json as! [String : AnyObject])
                     if model.error == nil {
-                        self.logo.sd_setImageWithURL(NSURL(string: model.profile_image_url!), placeholderImage: nil)
+                        self.logo.sd_setImageWithURL(NSURL(string: model.profile_image_url!), placeholderImage: UIImage(named: "avator_default"))
                         self.name.text = model.name
                         self.desc.text = model.desc
                         self.statuses_count.text = "\(model.statuses_count)"

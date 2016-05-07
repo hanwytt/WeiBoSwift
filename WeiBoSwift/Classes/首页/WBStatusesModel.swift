@@ -25,17 +25,18 @@ class WBStatusesModel: NSObject {
     /// 微博来源
     var source: String? {
         didSet{
-            // 1.截取字符串
             if let str = source {
                 if str.isEmpty {
                     return
                 }
                 let start = str.rangeOfString(">")!.endIndex
                 let end = str.rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch)!.startIndex
-                source = "来自" + str.substringWithRange(Range.init(start: start, end: end))
+                sourceText = "来自" + str.substringWithRange(Range.init(start: start, end: end))
             }
         }
     }
+    /// 微博来源文本
+    var sourceText: String?
     /// 是否已收藏，true：是，false：否
     var favorited: Bool = false
     /// 是否被截断，true：是，false：否
@@ -56,7 +57,7 @@ class WBStatusesModel: NSObject {
     /// 地理信息字段 详细
     var geo: AnyObject?
     /// 微博作者的用户信息字段 详细
-    var user: WBUserModel?
+    var user: WBUserModel!
     /// 被转发的原微博信息字段，当该微博为转发微博时返回 详细
     var retweeted_status: WBStatusesModel?
     /// 转发数

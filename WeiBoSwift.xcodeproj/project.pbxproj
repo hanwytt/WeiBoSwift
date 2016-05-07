@@ -24,6 +24,7 @@
 		B9430F8D1CD11B11003DE704 /* WBErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9430F8C1CD11B11003DE704 /* WBErrorModel.swift */; };
 		B96748481CD05A5400561A23 /* WBProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96748471CD05A5400561A23 /* WBProfileTableViewCell.swift */; };
 		B967484A1CD09F9C00561A23 /* WBUnreadCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96748491CD09F9C00561A23 /* WBUnreadCountModel.swift */; };
+		B99675511CDE0B2D00E3D14C /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99675501CDE0B2D00E3D14C /* UIButton+Category.swift */; };
 		B9E87C361CDC8AE20042FC91 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E87C351CDC8AE20042FC91 /* NSDate+Category.swift */; };
 		B9F079FC1CCDFB43007B1405 /* WBAuthorizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FA1CCDFB43007B1405 /* WBAuthorizeModel.swift */; };
 		B9F079FD1CCDFB43007B1405 /* WBAuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F079FB1CCDFB43007B1405 /* WBAuthorizeViewController.swift */; };
@@ -54,6 +55,7 @@
 		B9430F8C1CD11B11003DE704 /* WBErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBErrorModel.swift; sourceTree = "<group>"; };
 		B96748471CD05A5400561A23 /* WBProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B96748491CD09F9C00561A23 /* WBUnreadCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUnreadCountModel.swift; sourceTree = "<group>"; };
+		B99675501CDE0B2D00E3D14C /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
 		B9B55D6C1CCF6AE400C2F186 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		B9B55D741CCF70E200C2F186 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "Pods/../build/Debug-iphoneos/SnapKit.framework"; sourceTree = "<group>"; };
 		B9BBD3551CDB77B200D23811 /* WeiBoSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeiBoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				B91FD57B1CCDF91300C23684 /* String+Category.swift */,
 				B9E87C351CDC8AE20042FC91 /* NSDate+Category.swift */,
+				B99675501CDE0B2D00E3D14C /* UIButton+Category.swift */,
 			);
 			path = "扩展";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				B9F079FD1CCDFB43007B1405 /* WBAuthorizeViewController.swift in Sources */,
 				B907BB6F1CCC940B00568EE4 /* WBTabBarController.swift in Sources */,
 				B9F079FC1CCDFB43007B1405 /* WBAuthorizeModel.swift in Sources */,
+				B99675511CDE0B2D00E3D14C /* UIButton+Category.swift in Sources */,
 				B913A5E61CD348E70059A4A0 /* WBHomeTableViewCell.swift in Sources */,
 				B91FD5721CCDF84200C23684 /* WBHomeViewController.swift in Sources */,
 				B91FD57C1CCDF91300C23684 /* String+Category.swift in Sources */,

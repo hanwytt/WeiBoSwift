@@ -6,7 +6,7 @@
 //  Copyright © 2016年 hanwy. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension String{
     /**
